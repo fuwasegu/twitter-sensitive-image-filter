@@ -1,0 +1,70 @@
+.image-area {
+    border: solid thin red;
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    position: relative;
+}
+
+.show-switch-button {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    margin: 0;
+    padding: 8px 16px;
+    background-color: rgb(4, 4, 4);
+    color: white;
+    font-size: 12px;
+    border-radius: 16px;
+    cursor: pointer;
+
+    /* ボタンが一番上 */
+    z-index: 40;
+}
+
+.image-area input {
+    display: none;
+}
+
+.image-area input+div {
+    backdrop-filter: blur(50px);
+    opacity: 1;
+}
+
+.image-area input:checked+div {
+    backdrop-filter: blur(0px);
+    opacity: 0;
+}
+
+.image-wrapper {
+    position: relative;
+    width: calc(300px - 32px - 32px);
+    height: calc(400px - 32px - 32px);
+    padding: 32px;
+
+    /* target-image より上 */
+    z-index: 30;
+}
+
+.hide-icon {
+    width: 32px;
+    display: block;
+    margin: 0px auto;
+}
+
+.text-area-1 {
+    font-weight: bold;
+}
+
+.target-image {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    max-width: 300px;
+    max-height: 400px;
+
+    /* image-wrapper より下 */
+    z-index: 20;
+}
